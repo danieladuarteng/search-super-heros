@@ -1,0 +1,15 @@
+tr {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+  padding: 24px;
+}
+
+td {
+  padding: 24px;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+}

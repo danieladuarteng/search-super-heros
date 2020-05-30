@@ -1,34 +1,42 @@
-import React, {useState} from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from "react";
+import "./Form.css";
 
 function Form(props) {
-    const [queryParams, setSearch] = useState('');
+  const [search, setSearch] = useState("");
+  const [searchType, setSearchType] = useState("name");
 
-    return(
-        <form
-            autoComplete='off'
-            noValidate
-            onSubmit={
-                event =>{
-                    event.preventDefault();
-                    props.searchHeros(queryParams)
-                }
-            }
-        >
-        <label id="label-search">Search your hero favorite</label>
+  return (
+    <form
+      autoComplete="off"
+      noValidate
+      onSubmit={(event) => {
+        event.preventDefault();
+        props.searchHeros(search, searchType);
+        setSearch("");
+        setSearchType("name");
+      }}
+    >
+      <header>
+        <h1>Know more about your favorite hero or heroine</h1>
+      </header>
+
+      <fieldset>
+        <legend>Search your hero favorite</legend>
         <input
-            id='search'
-            type='text'
-            name='search'
-            aria-labelledby='label-search'
-            aria-describedby='Search your hero favorite'
-            onChange={(event) => setSearch(event.target.value)}
-            value={queryParams}
-            //required={checkErrors && props.enableStickerOptions}
+          id="search"
+          type="text"
+          name="search"
+          aria-labelledby="label-search"
+          aria-describedby="Search your hero favorite"
+          onChange={(event) => {
+            setSearch(event.target.value);
+          }}
+          value={search}
         />
         <button>Search</button>
-        </form>
-    )
+      </fieldset>
+    </form>
+  );
 }
 
-export default Form
+export default Form;

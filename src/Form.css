@@ -1,0 +1,10 @@
+h1 {
+  margin: 24px;
+  text-align: center;
+}
+
+fieldset {
+  padding: 24px;
+  border: unset;
+  text-align: center;
+}
