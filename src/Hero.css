@@ -1,15 +1,63 @@
 tr {
   display: flex;
-  justify-content: left;
+  justify-content: center;
   flex-wrap: wrap;
-  padding: 24px;
 }
 
 td {
-  padding: 24px;
+  padding: 10px;
 }
 
 img {
   width: 250px;
   height: 250px;
+}
+
+.progress {
+  color: #000;
+  background-color: #8080806b;
+}
+
+.progress-red {
+  color: #fff;
+  background-color: red;
+  text-align: center;
+}
+
+.progress-orangered {
+  color: #fff;
+  background-color: orangered;
+  text-align: center;
+}
+
+.progress-orange {
+  color: #fff;
+  background-color: orange;
+  text-align: center;
+}
+
+.progress-green {
+  color: #fff;
+  background-color: green;
+  text-align: center;
+}
+
+.progress-blue {
+  color: #fff;
+  background-color: blue;
+  text-align: center;
+}
+.progress-blueviolet {
+  color: #fff;
+  background-color: blueviolet;
+  text-align: center;
+}
+
+.powestats {
+  margin-bottom: 10px;
+}
+
+legend {
+  font-weight: bold;
+  margin-bottom: 10px;
 }

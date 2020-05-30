@@ -4,11 +4,11 @@ export const getHeros = (queryParams) =>
   fetch(`${api}` + `/${queryParams}`, {
     method: "GET",
   })
-    .then((response) => response.json())
-    .then((data) => {
-      return data.results;
-    })
-    .catch((error) => {
-      console.log(error);
-      return error;
-    });
+  .then((response) => response.json())
+  .then((data) => {
+    return data.results;
+  })
+  .catch((error) => {
+    console.log(error);
+    return error;
+  });
