@@ -1,7 +1,36 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 import "./Filter.css";
 
 function Filter(props) {
+  const { heros } = useSelector((state) => state.search);
+
+  // async function filterByPowerstats(value) {
+  //   const separator = value.split("-");
+  //   const type = separator[0].toString();
+  //   const power = separator[1].toString();
+
+  //   let result = heros;
+  //   const greaterPower =
+  //     heros &&
+  //     heros.sort(
+  //       (a, b) => b.powerstats[`${power}`] - a.powerstats[`${power}`]
+  //     )[0];
+  //   const lessPower =
+  //     heros &&
+  //     heros.sort(
+  //       (a, b) => a.powerstats[`${power}`] - b.powerstats[`${power}`]
+  //     )[0];
+
+  //   if (type === "greater") {
+  //     result = greaterPower;
+  //   } else {
+  //     result = lessPower;
+  //   }
+
+  //   await setHeros([result]);
+  // }
+
   const powerstats = [
     {
       label: "Greater combat",
