@@ -13,23 +13,47 @@ function App() {
     setHeros(response);
   }
 
-  function filterByPowerstats(power) {
-    return (
+  async function filterByPowerstats(value) {
+    const separator = value.split("-");
+    const type = separator[0].toString();
+    const power = separator[1].toString();
+
+    let result = heros;
+    const greaterPower =
       heros &&
-      Object.keys(heros).sort(
-        (a, b) =>
-          heros[b].powerstats[`${power}`] - heros[a].powerstats[`${power}`]
-      )
-    );
+      heros.sort(
+        (a, b) => b.powerstats[`${power}`] - a.powerstats[`${power}`]
+      )[0];
+    const lessPower =
+      heros &&
+      heros.sort(
+        (a, b) => a.powerstats[`${power}`] - b.powerstats[`${power}`]
+      )[0];
+
+    if (type === "greater") {
+      result = greaterPower;
+    } else {
+      result = lessPower;
+    }
+
+    await setHeros([result]);
   }
 
-  console.log(filterByPowerstats("combat"));
+  async function filterByName(value) {
+    const herosFiltered = heros && heros.filter((hero) => hero.name === value);
+    await setHeros(herosFiltered);
+  }
+
   return (
     <div className="App">
       <Form searchHeros={searchHeros} />
       {heros && (
         <>
-          <Filter heros={heros} />
+          <Filter
+            heros={heros}
+            filterByPowerstats={filterByPowerstats}
+            filterByName={filterByName}
+          />
           <Hero heros={heros} />
         </>
       )}
