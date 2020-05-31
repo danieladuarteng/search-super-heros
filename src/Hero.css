@@ -61,3 +61,25 @@ legend {
   font-weight: bold;
   margin-bottom: 10px;
 }
+
+.paper {
+  width: 70%;
+  border: 2px solid #000;
+  background-color: white;
+  box-shadow: blueviolet;
+  padding: 24px;
+}
+
+.modal {
+  display: flex;
+  padding: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+.root {
+  height: 300;
+  flex-grow: 1;
+  min-width: 300;
+  transform: translateZ(0);
+}
