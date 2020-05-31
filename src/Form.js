@@ -3,7 +3,6 @@ import "./Form.css";
 
 function Form(props) {
   const [search, setSearch] = useState("");
-  const [searchType, setSearchType] = useState("name");
 
   return (
     <form
@@ -11,9 +10,8 @@ function Form(props) {
       noValidate
       onSubmit={(event) => {
         event.preventDefault();
-        props.searchHeros(search, searchType);
+        props.searchHeros(search);
         setSearch("");
-        setSearchType("name");
       }}
     >
       <header>

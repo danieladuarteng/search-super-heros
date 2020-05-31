@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Modal from "@material-ui/core/Modal";
-
 import "./Hero.css";
 
 function Hero(props) {
