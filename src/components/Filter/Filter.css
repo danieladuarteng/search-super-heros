@@ -1,0 +1,16 @@
+.filter {
+  margin: 50px 0;
+  width: 500px;
+}
+h2 {
+  justify-content: left;
+}
+select {
+  margin: 0 20px;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}

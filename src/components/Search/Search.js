@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 import Form from "../Form";
 import Header from "../Header";
 import Field from "../Field";
@@ -13,7 +14,6 @@ function Search(props) {
       autoComplete="off"
       noValidate
       onSubmit={(event) => {
-        console.log("bo");
         event.preventDefault();
         props.searchHeros(search);
         setSearch("");
@@ -35,12 +35,21 @@ function Search(props) {
           required
         />
 
-        <ButtonCustom type="submit" variant="contained" color="secondary">
+        <ButtonCustom
+          disabled={search === ""}
+          type="submit"
+          variant="contained"
+          color="secondary"
+        >
           Search
         </ButtonCustom>
       </fieldset>
     </Form>
   );
 }
+
+Search.propTypes = {
+  searchHeros: PropTypes.func.isRequired,
+};
 
 export default Search;

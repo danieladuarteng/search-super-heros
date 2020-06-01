@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { actionGetHeros } from "./actions";
 import { useSelector, useDispatch } from "react-redux";
 import Search from "./components/Search";
-import Hero from "./Hero";
-import Filter from "./Filter";
+
+import Filter from "./components/Filter";
 import "./App.css";
 
 function App() {
@@ -11,32 +11,20 @@ function App() {
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
 
-  function searchHeros(search) {
-    console.log(search);
-    setLoading(true);
-    const response = actionGetHeros(search);
+  async function searchHeros(search) {
+    // setLoading(true);
+    const response = await actionGetHeros(search);
     console.log(response);
     dispatch(response);
-    setLoading(false);
+    // setLoading(false);
   }
 
-  // async function filterByName(value) {
-  //   const herosFiltered = heros && heros.filter((hero) => hero.name === value);
-  //   await setHeros(herosFiltered);
-  // }
-
-  console.log(heros);
   return (
     <div className="App">
-      <Search loading={loading} searchHeros={searchHeros} />
+      <Search searchHeros={searchHeros} />
       {heros && heros.length !== 0 && (
         <>
-          <Filter
-          // heros={heros}
-          //filterByPowerstats={filterByPowerstats}
-          //filterByName={filterByName}
-          />
-          <Hero heros={heros} />
+          <Filter />
         </>
       )}
     </div>

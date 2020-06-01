@@ -18,8 +18,20 @@ function Field(props) {
   );
 }
 
-Field.propTypes = {};
+Field.propTypes = {
+  id: PropTypes.string,
+  label: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  variant: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+  required: PropTypes.bool,
+};
 
-Field.defaultProps = {};
+Field.defaultProps = {
+  id: undefined,
+  required: false,
+};
 
 export default Field;
