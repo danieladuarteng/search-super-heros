@@ -1,3 +1,3 @@
-import ButtonCustom from "./ButtonCustom";
+import ButtonCustom from './ButtonCustom'
 
-export default ButtonCustom;
+export default ButtonCustom

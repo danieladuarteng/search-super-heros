@@ -1,9 +1,14 @@
-import { searchHeros } from "./search";
-import { getHeros } from "../service";
+import { searchHeros } from './search'
+import { getHeros } from '../service'
 
-export async function actionGetHeros(search) {
-  const result = await getHeros(search);
-  const response = searchHeros(result);
+export async function actionGetHeros (search) {
+  let response
+  const result = await getHeros(search)
+  console.log('result', result)
 
-  return response;
+  if (result !== undefined) {
+    response = searchHeros(result)
+  }
+
+  return response
 }

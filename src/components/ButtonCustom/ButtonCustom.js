@@ -1,12 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Button from "@material-ui/core/Button";
+import React from 'react'
+import PropTypes from 'prop-types'
+import Button from '@material-ui/core/Button'
 
-function ButtonCustom(props) {
-  const { type, variant, color, onClick, children, disabled, loading } = props;
+function ButtonCustom (props) {
+  const { type, variant, color, onClick, children, disabled, loading } = props
   return (
     <Button
-      style={{ padding: "15px" }}
+      style={{ padding: '15px' }}
       type={type}
       variant={variant}
       color={color}
@@ -15,7 +15,7 @@ function ButtonCustom(props) {
     >
       {children}
     </Button>
-  );
+  )
 }
 
 ButtonCustom.propTypes = {
@@ -24,12 +24,12 @@ ButtonCustom.propTypes = {
   color: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
   loading: PropTypes.bool,
-  onClick: PropTypes.func,
-};
+  onClick: PropTypes.func
+}
 
 ButtonCustom.defaultProps = {
   loading: false,
-  onClick: undefined,
-};
+  onClick: undefined
+}
 
-export default ButtonCustom;
+export default ButtonCustom

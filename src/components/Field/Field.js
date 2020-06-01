@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
-import TextField from "@material-ui/core/TextField";
+import React from 'react'
+import PropTypes from 'prop-types'
+import TextField from '@material-ui/core/TextField'
 
-function Field(props) {
-  const { id, label, type, name, variant, onChange, value, required } = props;
+function Field (props) {
+  const { id, label, type, name, variant, onChange, value, required } = props
   return (
     <TextField
       id={id}
@@ -15,7 +15,7 @@ function Field(props) {
       value={value}
       required={required}
     />
-  );
+  )
 }
 
 Field.propTypes = {
@@ -26,12 +26,12 @@ Field.propTypes = {
   variant: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
-  required: PropTypes.bool,
-};
+  required: PropTypes.bool
+}
 
 Field.defaultProps = {
   id: undefined,
-  required: false,
-};
+  required: false
+}
 
-export default Field;
+export default Field
