@@ -1,5 +1,8 @@
+# Search heros
 
-Search your favorite heros building in React using hooks and react-redux
+![](super-heros.gif)
+
+Search heros building in React using hooks and react-redux
 
 ## Required
 [NodeJS v10.16.4 or higher](https://nodejs.org/en/)
